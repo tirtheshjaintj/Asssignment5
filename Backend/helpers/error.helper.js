@@ -1,4 +1,3 @@
-// Custom Error Class
 class AppError extends Error {
     constructor(message, statusCode = 500) {
         super(message);
@@ -8,10 +7,9 @@ class AppError extends Error {
     }
 }
 
-// Global Error Handler Middleware
 const errorHandler = (err, req, res, next) => {
     const status = err.statusCode || 500;
-    console.error(err); // log full error
+    console.error(err);
 
     res.status(status).json({
         status: false,

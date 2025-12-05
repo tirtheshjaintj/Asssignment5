@@ -28,7 +28,6 @@ Return output now:
 
         let summaryResponse = null;
 
-        // Try Groq first
         try {
             summaryResponse = await getGroqData(wrappedPrompt);
         } catch (groqError) {
@@ -36,7 +35,6 @@ Return output now:
             summaryResponse = null;
         }
 
-        // If Groq returned nothing OR an error, call Gemini fallback
         if (!summaryResponse || summaryResponse.trim() === "") {
             try {
                 summaryResponse = await getGeminiData(wrappedPrompt);
@@ -49,14 +47,11 @@ Return output now:
             }
         }
 
-        // Process returned text
         const raw = summaryResponse?.trim();
 
-        // Extract title (first line)
         const titleMatch = raw.match(/^\s*([^\n\r]+)\s*[\n\r]/);
         const title = titleMatch ? titleMatch[1].trim() : null;
 
-        // Extract summary (everything after first line)
         const summaryMatch = raw.match(/^[^\n\r]+\s*[\n\r]+([\s\S]+)/);
         const summary = summaryMatch ? summaryMatch[1].trim() : null;
 

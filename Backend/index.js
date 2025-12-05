@@ -13,7 +13,6 @@ const { errorHandler } = require("./helpers/error.helper.js");
 
 //MiddleWaress
 app.use(cors());
-// app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
@@ -35,9 +34,9 @@ app.use("/api/razor", razor);
 //AI Routes
 app.use("/api/ai", ai);
 
+//Error Handling
 app.use(errorHandler);
 
-// Call after DB connections
 connectDB()
     .then(async () => {
         console.log("DB connected");

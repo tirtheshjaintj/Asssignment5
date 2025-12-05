@@ -6,17 +6,12 @@ const transporter = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: process.env.GMAIL_USER, // Your Gmail address
-        pass: process.env.GMAIL_PASS, // Your Gmail password or app-specific password
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
     },
 });
 
-/**
- * Send a professional HTML email
- * @param {string} subject - Email subject
- * @param {string} receiver - Recipient email
- * @param {string} message - Main message/content
- */
+
 async function sendMail(subject, receiver, message) {
     const mailOptions = {
         from: `"Imarticus Learning Team" <${process.env.GMAIL_USER}>`,

@@ -2,7 +2,6 @@ const Course = require("../models/course.model");
 const Lecture = require("../models/lecture.model");
 const mongoose = require("mongoose");
 
-// Get all courses with chapters + lectures
 exports.getAllCourses = async (req, res) => {
     try {
         const courses = await Course.find({});
@@ -14,7 +13,6 @@ exports.getAllCourses = async (req, res) => {
     }
 };
 
-// Get single course by ID with chapters + lectures
 exports.getSingleCourse = async (req, res) => {
     try {
         const { id } = req.params;
@@ -49,7 +47,6 @@ exports.getSingleCourse = async (req, res) => {
     }
 };
 
-// Get single lecture by ID
 exports.getLectureById = async (req, res) => {
     try {
         const { id } = req.params;
