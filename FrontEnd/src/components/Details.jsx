@@ -5,7 +5,7 @@ import { FaStar, FaUserFriends } from "react-icons/fa";
 export default function Details() {
     return (
         <>
-            <div className="container my-4">
+            <div className="container my-4 w-60">
                 <div className="shadow rounded p-4 bg-white d-flex flex-column flex-md-row justify-content-between align-items-center text-center">
                     <div className="px-3">
                         <small className="text-muted">Next Batch</small>

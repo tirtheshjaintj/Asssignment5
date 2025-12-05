@@ -5,8 +5,9 @@ export default function Topbar() {
         <>
             <div className="d-flex bg-white">
                 <img
+                    id="logo"
                     width={190}
-                    className="mx-20 my-3"
+                    className=" my-3"
                     src="https://cdn.pegasus.imarticus.org/imarticus12/newIL12.svg" alt="" />
             </div>
             <div className="d-flex justify-content-center" style={{

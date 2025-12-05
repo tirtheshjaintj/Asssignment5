@@ -38,17 +38,18 @@ export default function Navbar({ title = "Dashboard" }) {
 
             <MobileSidebar />
 
-            <div className="d-md-none position-absolute start-50 translate-middle-x">
+            <Link to={"/"}
+                className="d-md-none position-absolute start-50 translate-middle-x">
                 <img
                     src="https://cdn.pegasus.imarticus.org/images/imarticus-new-logo-green.svg"
                     alt="Logo"
                     style={{ height: "26px" }}
                 />
-            </div>
+            </Link>
 
             <div className="d-flex align-items-center gap-3 ms-auto">
 
-                <FaBell size={20} style={{ cursor: "pointer" }} />
+                <FaBell size={20} className="d-none d-md-block" style={{ cursor: "pointer" }} />
 
                 <div className="dropdown">
                     <div

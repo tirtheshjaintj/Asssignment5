@@ -11,6 +11,7 @@ import NotFoundPage from './pages/NotFound.jsx';
 import User_Dashboard from './pages/user/User_Dashboard.jsx';
 import Course from './pages/Course.jsx';
 import Home from './pages/Home.jsx';
+import Summarizer from './pages/Summarizer.jsx';
 
 
 const router = createBrowserRouter(
@@ -21,6 +22,7 @@ const router = createBrowserRouter(
       <Route path="/user/signup" element={<User_Signup />} />
       <Route path="/user/dashboard" element={<User_Dashboard />} />
       <Route path="/course/:id" element={<Course />} />
+      <Route path="/user/summarize" element={<Summarizer />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )

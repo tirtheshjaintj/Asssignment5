@@ -59,6 +59,10 @@ h2 {
   color: #000000b7;
 }
 
+#logo {
+  margin: 0px 40px;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -74,11 +78,37 @@ h2 {
 #title {
   font-size: 50px;
 }
+#box1 {
+  width: 60%;
+}
+#box1 button {
+  font-size: 1.3rem;
+}
+#stats div div {
+  background-color: #ff7645;
+}
+#stats div {
+  font-weight: bolder;
+  font-size: large;
+}
+#stats span {
+  font-weight: bolder;
+  font-size: larger;
+}
 @media (max-width: 600px) {
   #title {
     font-size: 40px;
   }
   #description {
     font-size: large;
+  }
+  #logo {
+    margin: 0px 10px;
+  }
+  #box1 {
+    width: 100%;
+  }
+  #box1 button {
+    font-size: 0.9rem;
   }
 }

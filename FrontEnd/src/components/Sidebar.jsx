@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { FaHome, FaUsers, FaRegCompass } from "react-icons/fa";
+import { FaHome, FaUsers, FaRegCompass, FaDochub, FaPage4, FaPagelines, FaBook } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Sidebar() {
@@ -16,13 +16,14 @@ export default function Sidebar() {
             }}
         >
             <div className="p-4">
-                <img
-                    src="https://cdn.pegasus.imarticus.org/images/imarticus-new-logo.svg"
-                    alt="Logo"
-                    width="160"
-                    className="mx-auto d-block mb-8"
-                />
-
+                <Link to={"/"}>
+                    <img
+                        src="https://cdn.pegasus.imarticus.org/images/imarticus-new-logo.svg"
+                        alt="Logo"
+                        width="160"
+                        className="mx-auto d-block mb-8"
+                    />
+                </Link>
                 <Link
                     to={"/user/dashboard"}
                     className="d-flex align-items-center p-3 mb-3 rounded-3"
@@ -30,6 +31,15 @@ export default function Sidebar() {
                 >
                     <FaHome className="me-2" />
                     <span className="fw-bold">Dashboard</span>
+                </Link>
+
+                <Link
+                    to={"/user/summarize"}
+                    className="d-flex align-items-center p-3 mb-3 rounded-3"
+                    style={{ backgroundColor: "#003F30", textDecoration: "none", color: "white" }}
+                >
+                    <FaBook className="me-2" />
+                    <span className="fw-bold">Summarizer</span>
                 </Link>
 
                 <div className="d-flex align-items-center px-3 py-2 mb-3">
@@ -54,6 +64,6 @@ export default function Sidebar() {
                     Get help
                 </button>
             </div>
-        </div>
+        </div >
     );
 }

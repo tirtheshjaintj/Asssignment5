@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import { useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom";
@@ -78,7 +79,7 @@ export default function CTA() {
         }
     }
     return (
-        <div className="container my-4 d-flex flex-column flex-md-row gap-3 justify-content-center  pb-10">
+        <div className="container my-4 d-flex  flex-row gap-3 justify-content-center pb-10" id="box1">
             <button onClick={handleClick} className="btn w-100 w-md-50 py-3 fw-semibold d-flex justify-content-center" style={{ backgroundColor: "#FF7645", color: "white" }}>
                 {isLoading ? <div className="spinner"></div> : "Apply Now"}
             </button>
