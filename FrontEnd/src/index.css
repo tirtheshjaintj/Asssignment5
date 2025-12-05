@@ -43,6 +43,21 @@
   transition: 0.2s;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+.topbar {
+  overflow-x: auto;
+}
+.topbar span {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px 10px;
+  padding: 5px 0px;
+  word-break: keep-all;
+}
+h1,
+h2 {
+  color: #000000b7;
+}
 
 @keyframes spin {
   0% {
@@ -50,5 +65,20 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+#title,
+#description {
+  color: #000000b7;
+}
+#title {
+  font-size: 50px;
+}
+@media (max-width: 600px) {
+  #title {
+    font-size: 40px;
+  }
+  #description {
+    font-size: large;
   }
 }

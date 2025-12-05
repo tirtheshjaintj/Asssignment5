@@ -10,12 +10,13 @@ import { GoogleOAuthProvider } from "@react-oauth/google"
 import NotFoundPage from './pages/NotFound.jsx';
 import User_Dashboard from './pages/user/User_Dashboard.jsx';
 import Course from './pages/Course.jsx';
+import Home from './pages/Home.jsx';
 
 
 const router = createBrowserRouter(
   createRoutesFromChildren(
     <Route path="" element={<App />}>
-      <Route path="/" />
+      <Route path="/" element={<Home />} />
       <Route path="/user/login" element={<User_Login />} />
       <Route path="/user/signup" element={<User_Signup />} />
       <Route path="/user/dashboard" element={<User_Dashboard />} />

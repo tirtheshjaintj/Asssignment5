@@ -20,7 +20,7 @@ function User_Login() {
     document.title = " User Login";
     let token = cookie.get('user_token');
     //console.log(token);
-    if (token) navigate('/user/dashboard');
+    if (token) navigate('/');
   }, []);
   const handleEmailChange = (e) => {
     setEmail(e.target.value);

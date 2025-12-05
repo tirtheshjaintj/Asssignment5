@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = null;
 
-// Create the user slice with reducers
 const userSlice = createSlice({
   name: 'user',
   initialState,
@@ -11,7 +10,7 @@ const userSlice = createSlice({
       return action.payload;
     },
     removeUser: () => {
-      return null; // Return null to reset the state
+      return null;
     },
   },
 });

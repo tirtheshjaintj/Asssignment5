@@ -6,12 +6,14 @@ import CourseSkeleton from "../../components/CourseSkeleton";
 import axiosInstance from "../../axios/axiosConfig";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Cookies from "universal-cookie";
 
 export default function User_Dashboard() {
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const user = useSelector((state) => state.user);
+    const cookie = new Cookies();
 
     useEffect(() => {
         const fetchCourses = async () => {
@@ -32,7 +34,8 @@ export default function User_Dashboard() {
     }
 
     useEffect(() => {
-        if (!user) {
+        let token = cookie.get('user_token');
+        if (!user && !token) {
             navigate("/user/login");
         }
     }, []);
@@ -44,7 +47,7 @@ export default function User_Dashboard() {
             <div className="d-flex flex-column" style={{ width: "100%" }}>
                 <Navbar />
 
-                {loading ? <>
+                {(loading || !user) ? <>
                     <CourseSkeleton />
                     <CourseSkeleton />
                     <CourseSkeleton />

@@ -126,7 +126,7 @@ function User_Signup() {
                 if (token) {
                     dispatch(addUser(response?.data?.user));
                     cookie.set("user_token", token, { path: '/', expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) });
-                    navigate('/user/dashboard');
+                    navigate('/');
                 }
             }
         } catch (error) {
