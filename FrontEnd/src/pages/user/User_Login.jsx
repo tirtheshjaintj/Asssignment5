@@ -5,14 +5,15 @@ import toast from 'react-hot-toast';
 import Cookie from "universal-cookie";
 import GoogleBox from '../../components/GoogleBox';
 import axiosInstance from '../../axios/axiosConfig';
-const url = import.meta.env.VITE_BACKEND_URL;
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../store/userSlice';
 
 function User_Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const cookie = new Cookie();
   useEffect(() => {
@@ -48,9 +49,12 @@ function User_Login() {
       }
       const token = response?.data?.token;
       if (token) {
+        dispatch(addUser(response?.data?.user));
         cookie.set("user_token", token, { path: '/', expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) });
         if (token) navigate('/user/dashboard');
       }
+
+
     }
     catch (error) {
       //console.log(error);

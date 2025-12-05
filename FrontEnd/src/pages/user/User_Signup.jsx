@@ -6,7 +6,8 @@ import EyeToggleSVG from '../../components/Eye';
 import { FaLock, FaUser } from 'react-icons/fa';
 import GoogleBox from '../../components/GoogleBox';
 import axiosInstance from '../../axios/axiosConfig';
-const url = import.meta.env.VITE_BACKEND_URL;
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../store/userSlice';
 
 function User_Signup() {
     const [step, setStep] = useState(1);
@@ -28,6 +29,7 @@ function User_Signup() {
     const [resendDisabled, setResendDisabled] = useState(false);
     const [timer, setTimer] = useState(60); // 60 seconds timer
     const [isLoading, setIsLoading] = useState(false);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         document.title = ' User Signup';
@@ -122,6 +124,7 @@ function User_Signup() {
                 toast.success(response.data.message);
                 const token = response?.data?.token;
                 if (token) {
+                    dispatch(addUser(response?.data?.user));
                     cookie.set("user_token", token, { path: '/', expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) });
                     navigate('/user/dashboard');
                 }
