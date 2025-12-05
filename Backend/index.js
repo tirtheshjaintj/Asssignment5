@@ -7,6 +7,7 @@ const connectDB = require('./helpers/db.helper');
 const cookieParser = require('cookie-parser');
 const user = require("./routes/user.route");
 const course = require("./routes/course.route");
+const razor = require("./routes/razor.route");
 const { errorHandler } = require("./helpers/error.helper.js");
 
 //MiddleWaress
@@ -26,6 +27,9 @@ app.use("/api/user", user);
 
 //Course Routes
 app.use("/api/course", course);
+
+//Razor Routes
+app.use("/api/razor", razor);
 
 app.use(errorHandler);
 
