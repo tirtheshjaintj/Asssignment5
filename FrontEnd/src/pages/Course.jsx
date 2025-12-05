@@ -65,12 +65,12 @@ export default function Course() {
                         </>
                     ) : (
                         <>
-                            <div className="p-4 shadow rounded bg-white mb-4 d-flex align-items-center gap-4">
+                            <div className="p-4 shadow rounded bg-white mb-4 d-flex flex-col flex-md-row align-items-center gap-4">
                                 <img
                                     src={course?.thumbnail}
                                     alt="Course Thumbnail"
                                     className="rounded"
-                                    style={{ width: "200px", height: "200px", objectFit: "contain" }}
+                                    style={{ width: "300px", height: "300px", objectFit: "cover" }}
                                 />
 
                                 <div>
