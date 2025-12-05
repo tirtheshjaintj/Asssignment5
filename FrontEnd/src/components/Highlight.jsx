@@ -12,25 +12,25 @@ export default function HighlightsSection() {
                         <div className="row g-3 justify-content-center" id="stats">
                             <div className="col-6  col-md-6">
                                 <div className=" text-white fw-bold rounded p-4 shadow">
-                                    <span>1600+</span> <div>Students Placed</div>
+                                    <span>1600+</span><br /><span>Students Placed</span>
+                                </div>
+                            </div>
+
+                            <div className="col-6 col-md-6">
+                                <div className=" text-white fw-bold rounded p-4 shadow" >
+                                    <span>12LPA</span> <br /><span>Highest CTC</span>
                                 </div>
                             </div>
 
                             <div className="col-6 col-md-6">
                                 <div className=" text-white fw-bold rounded p-4 shadow">
-                                    <span>12LPA</span> <div>Highest CTC</div>
+                                    <span>10</span><br /><span>Assured Interviews</span>
                                 </div>
                             </div>
 
                             <div className="col-6 col-md-6">
                                 <div className=" text-white fw-bold rounded p-4 shadow">
-                                    <span>10</span> <div>Assured Interviews</div>
-                                </div>
-                            </div>
-
-                            <div className="col-6 col-md-6">
-                                <div className=" text-white fw-bold rounded p-4 shadow">
-                                    <span>1000+</span> <div>Hiring Partners</div>
+                                    <span>1000+</span><br /><span>Hiring Partners</span>
                                 </div>
                             </div>
                         </div>
