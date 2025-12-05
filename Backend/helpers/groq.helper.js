@@ -18,5 +18,21 @@ async function getGroqData(prompt) {
         throw error;
     }
 }
+async function getGeminiData(prompt) {
+    try {
+        const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+        const model = genAI.getGenerativeModel({
+            model: "gemini-2.5-flash"  // or gemini-pro / gemini-1.5-flash depending on usage
+        });
+
+        const result = await model.generateContent(prompt);
+
+        return result.response.text() || "";
+    } catch (error) {
+        console.error("Error calling Gemini API:", error?.message || error);
+        throw error;
+    }
+}
 
 module.exports = getGroqData;

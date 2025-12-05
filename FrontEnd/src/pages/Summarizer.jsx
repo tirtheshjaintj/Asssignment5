@@ -137,6 +137,7 @@ function Summarizer() {
                             </div>
                         )}
 
+                        {/* Loading */}
                         {loading && (
                             <div className="mt-4 text-center">
                                 <div className="spinner-border text-primary"></div>
@@ -144,6 +145,7 @@ function Summarizer() {
                             </div>
                         )}
 
+                        {/* Summary Output */}
                         {summary && !error && (
                             <div className="card shadow p-4 mt-4 mx-auto" style={{ maxWidth: "800px" }}>
                                 {title && <h2 className="text-primary fw-bold text-center">{title}</h2>}

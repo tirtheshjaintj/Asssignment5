@@ -15,7 +15,7 @@ exports.verifyOrder = async (req, res) => {
     try {
         const { order_id, payment_id, signature } = req.body;
         const result = await verifyPayment(order_id, payment_id, signature);
-        res.status(200).json({ status: true, message: 'Order Verified!', result });
+        res.status(200).json({ status: true, message: 'Order Verifieds!', result });
     } catch (error) {
         throw new Error("Not valid Order");
     }

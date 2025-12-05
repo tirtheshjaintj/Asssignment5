@@ -8,6 +8,7 @@ const cookieParser = require('cookie-parser');
 const user = require("./routes/user.route");
 const course = require("./routes/course.route");
 const razor = require("./routes/razor.route");
+const ai = require("./routes/ai.route");
 const { errorHandler } = require("./helpers/error.helper.js");
 
 //MiddleWaress
@@ -30,6 +31,9 @@ app.use("/api/course", course);
 
 //Razor Routes
 app.use("/api/razor", razor);
+
+//AI Routes
+app.use("/api/ai", ai);
 
 app.use(errorHandler);
 
