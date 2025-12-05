@@ -5,12 +5,13 @@ import CourseCard from "../../components/CourseCard";
 import CourseSkeleton from "../../components/CourseSkeleton";
 import axiosInstance from "../../axios/axiosConfig";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function User_Dashboard() {
-
     const [courses, setCourses] = useState([]);
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
+    const user = useSelector((state) => state.user);
 
     useEffect(() => {
         const fetchCourses = async () => {
@@ -30,6 +31,11 @@ export default function User_Dashboard() {
         navigate(`/course/${id}`);
     }
 
+    useEffect(() => {
+        if (!user) {
+            navigate("/user/login");
+        }
+    }, []);
 
     return (<>
         <div className="d-flex">

@@ -3,10 +3,8 @@ import toast, { Toaster } from "react-hot-toast";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Cookie from "universal-cookie";
-import axios from "axios";
 import { addUser } from "./store/userSlice";
 import axiosInstance from "./axios/axiosConfig";
-const url = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const cookie = new Cookie();
@@ -38,7 +36,9 @@ function App() {
   useEffect(() => {
     //console.log(url);
     document.title = "Imarticus Learning";
-    getUser();
+    if (cookie.get('user_token')) {
+      getUser();
+    }
   }, []);
 
   useEffect(() => {
