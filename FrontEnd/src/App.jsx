@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Cookie from "universal-cookie";
 import axios from "axios";
 import { addUser } from "./store/userSlice";
+import axiosInstance from "./axios/axiosConfig";
 const url = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
@@ -14,10 +15,10 @@ function App() {
 
   const getUser = async () => {
     try {
-      const token = cookie.get('user_token'); // Get token from cookies
-      const response = await axios.get(`${url}/user/getUser`, {
+      const token = cookie.get('user_token');
+      const response = await axiosInstance.get(`/user/getUser`, {
         headers: {
-          Authorization: `Bearer ${token}`,  // Add token to Authorization header
+          Authorization: `Bearer ${token}`,
         }
       });
 
@@ -37,9 +38,7 @@ function App() {
   useEffect(() => {
     //console.log(url);
     document.title = "Imarticus Learning";
-    if (cookie.get('user_token')) {
-      getUser();
-    }
+    getUser();
   }, []);
 
   useEffect(() => {
