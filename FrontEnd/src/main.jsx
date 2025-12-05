@@ -22,7 +22,7 @@ const router = createBrowserRouter(
       <Route path="/user/signup" element={<User_Signup />} />
       <Route path="/user/dashboard" element={<User_Dashboard />} />
       <Route path="/course/:id" element={<Course />} />
-      {/* <Route path="/user/summarize" element={<Summarizer />} /> */}
+      <Route path="/user/summarize" element={<Summarizer />} />
       <Route path="*" element={<NotFoundPage />} />
     </Route>
   )
