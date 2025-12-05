@@ -20,7 +20,7 @@ function User_Login() {
     document.title = " User Login";
     let token = cookie.get('user_token');
     //console.log(token);
-    if (token) navigate('/');
+    if (token) navigate('/user/dashboard');
   }, []);
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -51,7 +51,7 @@ function User_Login() {
       if (token) {
         dispatch(addUser(response?.data?.user));
         cookie.set("user_token", token, { path: '/', expires: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) });
-        if (token) navigate('/user/dashboard');
+        if (token) navigate('/');
       }
 
 

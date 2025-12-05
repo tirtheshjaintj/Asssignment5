@@ -1,11 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-import { FaBell, FaUser, FaCog, FaSignOutAlt, FaBars } from "react-icons/fa";
+import { FaBell, FaUser, FaCog, FaSignOutAlt, FaBars, FaUsers, FaHome, FaRegCompass } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import { addUser } from "../store/userSlice";
+import Sidebar from "./Sidebar";
+import MobileSidebar from "./MobileSidebar";
 
 export default function Navbar({ title = "Dashboard" }) {
     const user = useSelector((state) => state.user);
@@ -31,7 +33,10 @@ export default function Navbar({ title = "Dashboard" }) {
             }}
         >
             <h6 className="fw-semibold m-0 d-none d-md-block">{title}</h6>
-            <FaBars className="d-md-none text-xl" />
+            <FaBars data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"
+                className="d-md-none text-xl" />
+
+            <MobileSidebar />
 
             <div className="d-md-none position-absolute start-50 translate-middle-x">
                 <img
