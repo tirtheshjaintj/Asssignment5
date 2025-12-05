@@ -36,7 +36,7 @@ const GoogleBox = ({ setIsLoading, type }) => {
           dispatch(addUser(response?.data.user));
 
           // Navigate to user dashboard
-          navigate(`/user/dashboard`);
+          navigate(`/`);
         }
       } else {
         toast.error(response.data.message || "Login failed");
